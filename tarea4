@@ -1,0 +1,91 @@
+using System;
+
+using System;
+
+namespace herencia
+{
+  class MainClass
+	{
+		public void capturaDatos(){
+			claseHeredero datos = new claseHeredero ();
+			Console.WriteLine ("nombre de carro y modelo");
+			Console.WriteLine ("");
+			datos.modelodelcarro = Console.ReadLine ();
+			Console.WriteLine ("");
+			datos.marcadelcarro = Console.ReadLine ();
+			Console.Clear ();
+			Console.WriteLine ("tipo de carro ");
+			Console.WriteLine ("");
+			datos.tipodecarro = Console.ReadLine ();
+			Console.Clear ();
+			 
+			datos.metodoHerencia ();
+			Console.Clear ();
+			Console.WriteLine (datos.metodoHerencia());
+		}
+		
+		public static void Main (string[] args)
+		{
+			MainClass objeto = new MainClass ();
+			objeto.capturaDatos ();
+			
+		}
+	}
+}
+
+
+{
+  public class claseHeredero:claseHereda
+	{
+		protected string nombre_y_modelo;
+		
+		public claseHeredero ()
+		{
+			
+			this.nombre_y_modelo = "";
+		}
+		
+		
+		public override String metodoHerencia( ){
+			
+			return "Nombre del carro y modelo: " + " "+this.nombredelcarro+" "+ this.modelodelcarro +"\n"+
+				"tipo de carro: " +" "+ this.tipodecarro+" \n"+
+					"datos_del_carro: " +" "+ this.nombre_y_modelo+" "+ this.nombredelcarro +" "+ this.modelodelcarro;
+		}
+		public void capturaNombreHijo(){
+			Console.WriteLine ("ingrese datos de carro");
+			this.nombre_y_modelo = Console.ReadLine ();
+			
+		}
+		
+		
+	}
+}
+
+
+
+public class claseHereda
+  {
+		
+		public string nombredelcarro;
+		public string modelodelcarro;
+		public string tipodecarro;
+		public string marcadelcarro;
+		public string capturar_datos_del_carro;
+		
+		public claseHereda ()
+		{
+			this.nombredelcarro = "";
+			this.marcadelcarro = "";
+			this.tipodecarro = "";
+
+			
+		}
+		
+		public virtual String metodoHerencia(){
+			
+			return
+				this.nombredelcarro + this.marcadelcarro +this.tipodecarro;
+	}
+}
+}
